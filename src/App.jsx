@@ -4,9 +4,8 @@ import Home from "./pages/Home";
 import ListFinish from "./pages/ListFinish";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    { id: 0, title: "Task", description: `description ...`, status: "start" },
-  ]);
+  const [tasks, setTasks] = useState([])
+  const [taskF, setTaskF] = useState([])
 
   return (
     <>
@@ -18,10 +17,10 @@ function App() {
               <Add tasks={tasks} setTasks={setTasks} />
             </div>
             <div className="col-6 col-md-6 mx-5">
-              <Home tasks={tasks} setTasks={setTasks} />
+              <Home tasks={tasks} setTasks={setTasks} taskF={taskF} setTaskF={setTaskF} />
             </div>
             <div className="col-6 col-md-2">
-              <ListFinish tasks={tasks} setTasks={setTasks} />
+              <ListFinish tasks={tasks} taskF={taskF} setTasks={setTasks} setTaskF={setTaskF} />
             </div>
           </div>
         </main>
