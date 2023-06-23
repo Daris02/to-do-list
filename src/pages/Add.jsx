@@ -5,7 +5,6 @@ export default function Add({ tasks, setTasks}) {
   const handleAdd = (task) => {
     const tasksCopy = [...tasks];
     tasksCopy.push(task);
-    tasksCopy.reverse();
     setTasks(tasksCopy);
   };
 
