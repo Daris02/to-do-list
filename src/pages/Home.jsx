@@ -41,7 +41,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
       <div className="mx-auto">
         <div className="row row-cols-1 row-cols-md-3">
           <div className="col align-items-center my-3">
-            <h5 className="mx-auto border rounded-2">Start</h5>
+            <h5 className="mx-auto border rounded-2 bg-danger text-white text-center py-2">Start</h5>
             <div className="d-flex flex-column gap-2 w-100 mx-auto">
               {tasks
                 .filter((t) => t.status == "start")
@@ -66,7 +66,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
             </div>
           </div>
           <div className="col align-items-center my-3">
-            <h5 className="mx-auto border rounded-2">Onloading</h5>
+            <h5 className="mx-auto border rounded-2 bg-warning text-white text-center py-2">Onloading</h5>
             <div className="App d-flex flex-column gap-2 w-100 mx-auto">
               {tasks
                 .filter((t) => t.status == "onloading")
@@ -97,7 +97,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
             </div>
           </div>
           <div className="col align-items-center my-3">
-            <h5 className="mx-auto border rounded-2">Finished</h5>
+            <h5 className="mx-auto border rounded-2 bg-success text-white text-center py-2">Finished</h5>
             <div className="App d-flex flex-column gap-2 w-100 mx-auto">
               {tasks
                 .filter((t) => t.status == "finished")
@@ -113,7 +113,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
                     <div className="card-footer">
                       <button
                         className="btn btn-warning text-white"
-                        onClick={() => handleCancel(task.id)}
+                        onClick={() => handleStart(task.id)}
                       >
                         cancel
                       </button>

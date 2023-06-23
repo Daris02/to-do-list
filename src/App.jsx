@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
+      <h2 className="container-fluid bg-primary text-white p-3">To Do List</h2>
       <div className="container my-2">
-        <h2>Dashboard</h2>
         <main className="mt-5">
           <div className="row d-flex justify-content-center gy-5">
             <div className="col-6 col-md-2">

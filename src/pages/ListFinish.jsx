@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function ListFinish({ taskF }) {
   return (
-    <div className="add text-center">
-    <h4>List Finished</h4>
     <div>
-      {taskF.map((task) => <p key={task.id}>{task.title}</p>)}
+    <h4 className='text-center'>List Finished</h4>
+    <div className='d-flex inline'>
+      {taskF.map((task) => <p className='text-center' key={task.id}>{task.title} : {task.description}</p>)}
     </div>
   </div>
   )
