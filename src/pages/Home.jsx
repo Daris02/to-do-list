@@ -1,5 +1,6 @@
 import React from "react";
 import Task from "../components/Task";
+import cancelButton from "../asset/cancelButton.ico"
 
 export default function Home({ tasks, setTasks, taskF, setTaskF }) {
   const handleStart = (id) => {
@@ -103,12 +104,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
                 .reverse()
                 .map((task) => (
                   <div className="card p-1 opacity" key={task.id}>
-                    <button
-                      className="btn btn-primary text-white w-25 position-absolute top-0 end-0"
-                      onClick={() => handleFinish(task.id)}
-                    >
-                      x
-                    </button>
+                      <img src={cancelButton} alt="cancelButton" className="button position-absolute top-0 end-0" onClick={() => handleFinish(task.id)} />
                     <Task
                       key={task.id}
                       title={task.title}
@@ -116,7 +112,7 @@ export default function Home({ tasks, setTasks, taskF, setTaskF }) {
                     />
                     <div className="card-footer">
                       <button
-                        className="btn btn-danger text-white"
+                        className="btn btn-warning text-white"
                         onClick={() => handleCancel(task.id)}
                       >
                         cancel
