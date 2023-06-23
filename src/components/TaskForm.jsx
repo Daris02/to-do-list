@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function TaskForm({ handleAdd }) {
   const [inputs, setInputs] = useState({});
+  const [identifiant, setIdentifiant] = useState(0);
 
   const handleChange = (event) => {
     const title = event.target.name;
@@ -12,7 +13,7 @@ export default function TaskForm({ handleAdd }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const id = new Date();
+    const id = identifiant;
     const title = inputs.title;
     const description = inputs.description;
     const status = "start";
@@ -20,6 +21,7 @@ export default function TaskForm({ handleAdd }) {
     if (title == null || description == null) {
       alert("Title or Content value not empty, retry please !");
     } else {
+      setIdentifiant(identifiant + 1)
       handleAdd({ id, title, description, status });
     }
 
